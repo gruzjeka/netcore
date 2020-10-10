@@ -18,16 +18,19 @@ namespace UISynchronizationContext
             int value = 13;
 
             Trace.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            Trace.WriteLine(SynchronizationContext.Current.GetHashCode());
 
             await Task.Delay(TimeSpan.FromSeconds(1));
 
             Trace.WriteLine(Thread.CurrentThread.ManagedThreadId);
-
+            Trace.WriteLine(SynchronizationContext.Current.GetHashCode());
+            
             value *= 2;
 
             await Task.Delay(TimeSpan.FromSeconds(1));
 
             Trace.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            Trace.WriteLine(SynchronizationContext.Current.GetHashCode());
         }
 
         private async void button2_Click(object sender, EventArgs e)
@@ -35,16 +38,19 @@ namespace UISynchronizationContext
             int value = 13;
 
             Trace.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            Trace.WriteLine(SynchronizationContext.Current.GetHashCode());
 
             await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
 
             Trace.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            Trace.WriteLine(SynchronizationContext.Current?.GetHashCode());
 
             value *= 2;
 
             await Task.Delay(TimeSpan.FromSeconds(1));
 
             Trace.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            Trace.WriteLine(SynchronizationContext.Current?.GetHashCode());
         }
     }
 }

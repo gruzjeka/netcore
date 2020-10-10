@@ -13,19 +13,19 @@ namespace HttpSynchronizationContext.Controllers
             int value = 13;
 
             Trace.WriteLine(Thread.CurrentThread.ManagedThreadId);
-            Trace.WriteLine(HttpContext.GetHashCode());
+            Trace.WriteLine(SynchronizationContext.Current.GetHashCode());
 
             await Task.Delay(TimeSpan.FromSeconds(1));
 
             Trace.WriteLine(Thread.CurrentThread.ManagedThreadId);
-            Trace.WriteLine(HttpContext.GetHashCode());
+            Trace.WriteLine(SynchronizationContext.Current.GetHashCode());
 
             value *= 2;
 
             await Task.Delay(TimeSpan.FromSeconds(1));
 
             Trace.WriteLine(Thread.CurrentThread.ManagedThreadId);
-            Trace.WriteLine(HttpContext.GetHashCode());
+            Trace.WriteLine(SynchronizationContext.Current.GetHashCode());
 
             return View();
         }
@@ -35,19 +35,20 @@ namespace HttpSynchronizationContext.Controllers
             int value = 13;
 
             Trace.WriteLine(Thread.CurrentThread.ManagedThreadId);
-            Trace.WriteLine(HttpContext.GetHashCode());
+            Trace.WriteLine(SynchronizationContext.Current.GetHashCode());
 
             await Task.Delay(TimeSpan.FromSeconds(1)).ConfigureAwait(false);
 
+
             Trace.WriteLine(Thread.CurrentThread.ManagedThreadId);
-            Trace.WriteLine(HttpContext.GetHashCode());
+            Trace.WriteLine(SynchronizationContext.Current?.GetHashCode());
 
             value *= 2;
 
             await Task.Delay(TimeSpan.FromSeconds(1));
 
             Trace.WriteLine(Thread.CurrentThread.ManagedThreadId);
-            Trace.WriteLine(HttpContext.GetHashCode());
+            Trace.WriteLine(SynchronizationContext.Current?.GetHashCode());
 
             ViewBag.Message = "Your application description page.";
 

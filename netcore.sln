@@ -15,9 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncAwait", "AsyncAwait\As
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deadlock", "Deadlock", "{2F90B1BB-77C4-44F6-B022-7D0484236A40}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIDeadlock", "UIDeadlock\UIDeadlock.csproj", "{CF3C9712-F125-4229-A3AE-8E69F8D50E6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncUIDeadlock", "UIDeadlock\AsyncUIDeadlock.csproj", "{CF3C9712-F125-4229-A3AE-8E69F8D50E6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDeadlock", "WebDeadlock\WebDeadlock.csproj", "{82038802-4D04-4E75-9A07-9A26D090D81C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncWebDeadlock", "WebDeadlock\AsyncWebDeadlock.csproj", "{82038802-4D04-4E75-9A07-9A26D090D81C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
